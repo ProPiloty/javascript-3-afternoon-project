@@ -115,7 +115,7 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 */
 
 let orderTotals = orders.map(function(element, index, array) {
-  return element.price + (element.price * element.tax);
+  return element.price * (1 + element.tax);
 });// Code here
 
 
@@ -140,7 +140,7 @@ let bobsTotal = purchases.reduce(function(total, element) {
   if (element.owner === "Bob") {
     return total + element.price;
   }
-  return total;
+  return total
 }, 0) //Code Here
 
 
